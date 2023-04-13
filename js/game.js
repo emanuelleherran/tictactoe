@@ -5,7 +5,7 @@ const currentPlayer2 = localStorage.getItem('player2')
 let saveMovesPlayer1 = []
 let saveMovesPlayer2 = []
 let turn = 0
-let win
+let win, tie
 let td11, td12, td13, td21, td22, td23, td31, td32, td33
 
 board.addEventListener('click', game)
@@ -30,6 +30,7 @@ function game(ev){
 
         if(win){
             localStorage.setItem('winner', currentPlayer1)
+            localStorage.setItem('tie', 'false')
             board.removeEventListener('click', game)
             setTimeout(function(){
                 location.replace("/html/end.html")
@@ -47,11 +48,20 @@ function game(ev){
 
         if(win){
             localStorage.setItem('winner', currentPlayer2)
+            localStorage.setItem('tie', 'false')
             board.removeEventListener('click', game)
             setTimeout(function(){
                 location.replace("/html/end.html")
             }, 1000)
         }
+    }
+
+    if(saveMovesPlayer1.length === 5 && saveMovesPlayer2.length === 4){
+        localStorage.setItem('tie', 'true')
+        board.removeEventListener('click', game)
+        setTimeout(function(){
+            location.replace("/html/end.html")
+        }, 1000)       
     }
 }
 
@@ -94,7 +104,7 @@ function verifyWinnerPlayer1(){
     }else if(td11 && td21 & td31){
         const changeColor1 = document.querySelector('#td-1-1 .design')
         changeColor1.style.color = '#203e59'
-        const changeColor2 = document.querySelector('#td-2-2 .design')
+        const changeColor2 = document.querySelector('#td-2-1 .design')
         changeColor2.style.color = '#203e59'
         const changeColor3 = document.querySelector('#td-3-1 .design')
         changeColor3.style.color = '#203e59'
@@ -175,7 +185,7 @@ function verifyWinnerPlayer2(){
     }else if(td11 && td21 & td31){
         const changeColor1 = document.querySelector('#td-1-1 .design')
         changeColor1.style.color = '#203e59'
-        const changeColor2 = document.querySelector('#td-2-2 .design')
+        const changeColor2 = document.querySelector('#td-2-1 .design')
         changeColor2.style.color = '#203e59'
         const changeColor3 = document.querySelector('#td-3-1 .design')
         changeColor3.style.color = '#203e59'
