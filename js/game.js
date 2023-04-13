@@ -32,7 +32,7 @@ function game(ev){
             localStorage.setItem('winner', currentPlayer1)
             board.removeEventListener('click', game)
             setTimeout(function(){
-                location.replace("/end.html")
+                location.replace("/html/end.html")
             }, 1000)
         }
 
@@ -49,7 +49,7 @@ function game(ev){
             localStorage.setItem('winner', currentPlayer2)
             board.removeEventListener('click', game)
             setTimeout(function(){
-                location.replace("/end.html")
+                location.replace("/html/end.html")
             }, 1000)
         }
     }

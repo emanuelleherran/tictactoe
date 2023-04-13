@@ -15,7 +15,7 @@ function startGame(ev){
         namePlayer2 = namePlayer2.value
         localStorage.setItem('player1', namePlayer1)
         localStorage.setItem('player2', namePlayer2)
-        location.replace("/game.html")
+        location.replace("/html/game.html")
     }
 }
 
