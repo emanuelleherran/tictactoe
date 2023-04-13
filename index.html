@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tic Tac Toe</title>
+    <script src="/index.js" defer></script>
+    <link rel="stylesheet" href="/index.css">
+    <link href="https://fonts.googleapis.com/css2?family=Gruppo&family=Orbitron:wght@500;900&family=Sen:wght@700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="container-background">
+        <h1 class="title">TIC TAC TOE</h1>
+
+        <section id="choose-player" class="choose-player">
+            <div id="container-players">
+                <div id="player1" class="players">
+                    <label for="name1">1 Player</label><br><br>
+                    <input type="text" name="name1" id="name1" placeholder="Enter player name" value="" class="input-error">
+                    <div class="design">X</div>
+                </div>
+                <div id="player2" class="players">
+                    <label for="name2">2 Player</label><br><br>
+                    <input type="text" name="name2" id="name2" placeholder="Enter player name" value="" class="input-error">
+                    <div class="design">O</div>
+                </div>
+            </div>
+        </section>
+        <div class="start-button">
+            <a href="/game.html" id="start-game">Let's play!</a>
+        </div>
+    </div>
+</body>
+</html>
